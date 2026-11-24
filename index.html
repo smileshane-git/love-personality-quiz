@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fff7f4">
+  <meta name="description" content="20道趣味选择题，探索你在爱情中的相处倾向。">
+  <title>你在爱情里属于哪一种人格？｜趣味心理测试</title>
+  <style>
+    :root{
+      --ink:#352c36;--muted:#776d78;--pink:#e98f9c;--rose:#fff0f1;
+      --peach:#fff5ed;--lav:#f3efff;--line:#eee4e7;--white:#fff;
+      --shadow:0 18px 55px rgba(89,53,69,.10);--radius:24px;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(135deg,#fff8f5 0%,#fff2f4 48%,#f7f3ff 100%);
+      color:var(--ink);font-family:ui-sans-serif,system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.7}
+    button{font:inherit}
+    .wrap{width:min(900px,calc(100% - 32px));margin:0 auto;padding:34px 0 60px}
+    .hero{text-align:center;padding:30px 18px 24px}
+    .eyebrow{display:inline-block;padding:6px 13px;border-radius:99px;background:#fff;
+      color:#b66e7d;font-size:12px;letter-spacing:.12em;font-weight:700}
+    h1{font-size:clamp(30px,6vw,48px);line-height:1.22;letter-spacing:-.04em;margin:18px 0 12px}
+    .hero p{max-width:620px;margin:0 auto;color:var(--muted);font-size:15px}
+    .card{background:rgba(255,255,255,.92);border:1px solid rgba(255,255,255,.9);
+      border-radius:var(--radius);box-shadow:var(--shadow);padding:clamp(22px,5vw,42px)}
+    .intro{max-width:720px;margin:0 auto}
+    .intro h2,.result h2{margin:0 0 12px;font-size:24px}
+    .intro ul{padding-left:1.2em;color:var(--muted);margin:12px 0 24px}
+    .btn{border:0;border-radius:999px;padding:13px 25px;background:var(--ink);color:white;
+      cursor:pointer;font-weight:700;transition:transform .18s,opacity .18s}
+    .btn:hover{transform:translateY(-2px)}.btn:disabled{opacity:.35;cursor:not-allowed;transform:none}
+    .btn.secondary{background:#f7edf0;color:#875866}
+    .center{text-align:center}
+    .progress-top{display:flex;justify-content:space-between;gap:12px;color:var(--muted);font-size:13px;margin-bottom:10px}
+    .track{height:7px;background:#f5e9ec;border-radius:99px;overflow:hidden;margin-bottom:28px}
+    .bar{height:100%;width:0;background:linear-gradient(90deg,#e99aa6,#b7a4ed);border-radius:99px;transition:width .25s}
+    .q-kicker{font-size:12px;color:#bd7887;font-weight:800;letter-spacing:.12em}
+    .question{font-size:clamp(20px,4vw,27px);line-height:1.45;margin:9px 0 23px}
+    .options{display:grid;gap:12px}
+    .option{width:100%;text-align:left;padding:15px 17px;border:1.5px solid var(--line);border-radius:16px;
+      background:#fff;color:var(--ink);cursor:pointer;display:flex;gap:13px;align-items:flex-start;transition:.18s}
+    .option:hover{border-color:#e8a2ad;background:#fffafb}
+    .option.selected{border-color:#d98291;background:#fff1f3;box-shadow:0 0 0 3px rgba(217,130,145,.10)}
+    .letter{flex:0 0 27px;height:27px;border-radius:50%;display:grid;place-items:center;background:#f8eef0;color:#a66b78;font-size:12px;font-weight:800}
+    .option.selected .letter{background:#d98291;color:white}
+    .nav{display:flex;justify-content:space-between;gap:12px;margin-top:26px}
+    .nav .btn{min-width:112px}
+    .hidden{display:none!important}
+    .result{text-align:left}
+    .result-head{text-align:center;padding-bottom:25px;border-bottom:1px solid var(--line);margin-bottom:25px}
+    .result-emoji{font-size:48px;line-height:1.3}
+    .result-tag{display:inline-block;margin:6px 0 10px;padding:5px 12px;background:#fff0f2;border-radius:99px;color:#a65e70;font-size:12px;font-weight:700}
+    .result-title{font-size:clamp(27px,5vw,38px);margin:3px 0 8px}
+    .result-sub{color:var(--muted);margin:0 auto;max-width:600px}
+    .scoreline{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:17px}
+    .scorepill{background:#faf5f6;border:1px solid var(--line);border-radius:99px;padding:5px 10px;font-size:12px;color:#75636c}
+    .analysis h3{font-size:18px;margin:25px 0 8px;color:#805565}
+    .analysis p{margin:0 0 12px;color:#514750}
+    .analysis ul{padding-left:1.25em;color:#514750}
+    .disclaimer{font-size:12px;color:#91858e;background:#faf7f8;border-radius:14px;padding:13px 15px;margin-top:24px}
+    .actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:26px}
+    footer{text-align:center;color:#9a8e97;font-size:12px;padding:22px 10px 0}
+    @media(max-width:560px){.wrap{width:min(100% - 20px,900px);padding-top:12px}.hero{padding-top:24px}.card{border-radius:20px}.nav .btn{min-width:0;flex:1;padding:12px 16px}}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header class="hero">
+      <span class="eyebrow">LOVE & SELF-DISCOVERY · 20 QUESTIONS</span>
+      <h1>你在爱情里<br>属于哪一种人格？</h1>
+      <p>从心动的瞬间到发生分歧时的反应，用 20 道轻松选择题，看看你习惯怎样靠近一个人、表达在意，以及经营亲密关系。</p>
+    </header>
+
+    <section class="card intro" id="intro">
+      <h2>开始之前，给自己一点诚实的空间</h2>
+      <p>这不是一场“谁更适合恋爱”的评比，也没有标准答案。请按照你<strong>大多数时候真实会做的反应</strong>作答，而不是理想中的自己。</p>
+      <ul>
+        <li>共 20 题，每题选择最贴近你的一项。</li>
+        <li>预计用时约 3–5 分钟，答题进度会自动保存到本次页面。</li>
+        <li>完成后会得到一种主要恋爱倾向，以及相处优势、容易卡住的地方和成长建议。</li>
+      </ul>
+      <p class="disclaimer">温馨提示：本测试为自我探索与娱乐用途，不是临床心理测评，也不能用于诊断依恋类型或判断一段关系是否健康。</p>
+      <div class="center" style="margin-top:24px"><button class="btn" id="startBtn">开始测试 →</button></div>
+    </section>
+
+    <section class="card hidden" id="quiz" aria-live="polite">
+      <div class="progress-top"><span id="questionCount">第 1 / 20 题</span><span id="percent">5%</span></div>
+      <div class="track"><div class="bar" id="progress"></div></div>
+      <div class="q-kicker" id="qKicker">QUESTION 01</div>
+      <h2 class="question" id="questionText"></h2>
+      <div class="options" id="options"></div>
+      <div class="nav">
+        <button class="btn secondary" id="prevBtn">← 上一题</button>
+        <button class="btn" id="nextBtn" disabled>下一题 →</button>
+      </div>
+    </section>
+
+    <section class="card result hidden" id="result" aria-live="polite">
+      <div class="result-head">
+        <div class="result-emoji" id="resultEmoji"></div>
+        <span class="result-tag">你的恋爱倾向画像</span>
+        <h2 class="result-title" id="resultTitle"></h2>
+        <p class="result-sub" id="resultSubtitle"></p>
+        <div class="scoreline" id="scoreline"></div>
+      </div>
+      <div class="analysis" id="analysis"></div>
+      <div class="disclaimer">请把结果当作一面温柔的镜子，而不是给自己贴上的固定标签。人的亲密模式会随着对象、阶段、经验与安全感而变化；如果某段关系持续让你感到恐惧、被控制或受伤，优先寻求可信任的人或专业人士支持。</div>
+      <div class="actions">
+        <button class="btn" id="restartBtn">重新测试</button>
+        <button class="btn secondary" id="copyBtn">复制结果摘要</button>
+      </div>
+    </section>
+    <footer>一份关于亲密关系的轻量自我探索 · 请以真实感受作答</footer>
+  </main>
+
+<script>
+const types = {
+  A: {
+    name:"温柔共鸣型", emoji:"🌷", subtitle:"你擅长感受情绪、回应细节，让爱在理解与照顾中慢慢生长。",
+    sections:[
+      ["你的恋爱底色","你在爱情里很重视情绪上的连接。比起轰轰烈烈的宣言，你更容易被一个及时的回应、一句记得你喜好的话，或对方愿意认真听你说完一件小事打动。你通常有不错的共情能力，能察觉气氛变化，也愿意主动理解伴侣行为背后的原因。对你而言，亲密不是两个人时时刻刻黏在一起，而是我愿意把真实的感受交给你，也相信你会认真接住。你可能不一定擅长把需求说得很强势，却常常会通过照顾、陪伴、记住细节来表达爱。你的温柔不是没有原则，而是倾向先理解，再决定如何回应。"],
+      ["你带给关系的礼物","你能让伴侣感到被看见。关系遇到压力时，你往往愿意倾听、缓和冲突，并寻找双方都能接受的做法。你对细节敏锐，因此容易发现对方什么时候疲惫、什么时候需要空间、什么时候只是想有人陪着。你也有能力把日常过得有温度：一顿认真准备的饭、一条关心的消息、一个记得兑现的小约定，都可能成为关系里的稳定感来源。和你相处的人，常会感受到一种“我不必时时表现完美，也有人愿意理解我”的松弛。"],
+      ["容易卡住的地方","需要留意的是，你可能太习惯照顾别人的感受，以至于把自己的需求放到最后。为了不让气氛变僵，你有时会说“没关系”，但心里其实有失落；你也可能反复揣摩对方语气，把尚未确认的情绪当成事实。长期如此，温柔容易变成隐形消耗：你付出很多，却期待对方自然读懂你的需要。当对方没有以同样细腻的方式回应时，你可能感到委屈，却又担心直接表达会显得计较。记住，共情不等于替对方承担情绪，体贴也不意味着必须牺牲自己。"],
+      ["让爱更舒服的练习","练习把“希望你能懂”变成清楚、具体、可回应的表达。例如：“我今天有点低落，想要你陪我聊十分钟”，比沉默等待更容易让对方靠近。发生分歧时，先区分事实、感受和猜测：事实是发生了什么，感受是你因此怎样，猜测则是你认为对方为什么这么做。把猜测留给沟通验证。也请给自己安排不以伴侣为中心的生活，保留朋友、兴趣与独处时间。健康的温柔包含边界：你可以理解对方，同时也可以说“不”；你可以愿意付出，也可以期待互相照顾。你不需要变得冷硬，只需要让自己的感受也拥有同等重要的位置。"]
+    ]
+  },
+  B: {
+    name:"自由探索型", emoji:"🦋", subtitle:"你珍惜真实、自主与新鲜感，希望亲密是并肩同行，而不是彼此捆绑。",
+    sections:[
+      ["你的恋爱底色","你对爱情的期待里，有很重要的一项叫作“做自己”。你喜欢两个人相互吸引、分享生活，也希望彼此仍然拥有独立的节奏、朋友和兴趣。你不一定排斥承诺，只是不喜欢把承诺理解成随时汇报、处处绑定或放弃个人空间。对你来说，好的关系像两个人各自完整，却愿意不断选择同行。你可能喜欢新鲜体验，愿意尝试不同的约会方式，也希望伴侣对世界保持好奇。比起高密度的情绪确认，你往往更看重相处是否轻松、坦诚，以及彼此能否尊重差异。"],
+      ["你带给关系的礼物","你能为关系带来活力和开阔感。你鼓励伴侣发展自己的兴趣，不太容易把不同意见直接理解为不爱，也愿意一起尝试新事物。你通常能提醒两个人：恋爱是生活的一部分，而不是生活的全部。这种独立感有助于减少控制与过度依赖，也让彼此有机会带着新的经历回到关系里。你可能很会制造轻松的氛围，让相处不只有责任和讨论，也有玩心、探索与惊喜。对同样重视自主的人而言，你会是一个既亲近又不令人窒息的伴侣。"],
+      ["容易卡住的地方","当伴侣需要更多确认或陪伴时，你可能会觉得被要求、被限制，第一反应是拉开距离。你也可能把严肃沟通误读为关系失去轻松感，于是用转移话题、开玩笑或暂时消失来缓解压力。需要注意的是，自由并不等于不解释，空间也不等于让对方长期处于不确定中。如果你很少主动分享计划、感受或关系期待，伴侣可能无法判断自己在你生活中的位置。另一方面，你也可能因为害怕失去自主，而迟迟不谈未来，错过建立共同方向的机会。"],
+      ["让爱更舒服的练习","把“我需要空间”说成可理解的安排，而不是突然抽离。例如：“我今晚想自己待一会儿，明天我们再好好聊”，既保护了独处，也给出明确的连接信号。可以和伴侣一起协商联系频率、独处时间、社交边界与重要决定的沟通方式。尝试在轻松之外，也为深度交流留出固定空间：每周一次聊聊近况、期待和不舒服的地方。你不必放弃自由来证明爱，但可以让对方看见你的选择与在乎。成熟的自主不是永远不需要别人，而是能在保持自我的同时，主动承担关系中的回应、协商和承诺。"]
+    ]
+  },
+  C: {
+    name:"热烈投入型", emoji:"🔥", subtitle:"你爱得直接而认真，渴望明确回应，也愿意为心动的人付出行动。",
+    sections:[
+      ["你的恋爱底色","你进入一段关系时，往往带着鲜明的热情。喜欢就想靠近，在意就愿意表达，遇到值得的人也愿意投入时间和精力。你可能享受主动安排约会、分享日常、制造惊喜，也希望感情有清晰的方向，而不是长期停留在暧昧和猜测里。对你来说，爱不只是心里知道，更应该在行动中被感受到。你通常不害怕表达喜欢，也希望对方给出相对明确的回应。热烈并不代表冲动，你只是更倾向于用行动确认关系的存在感，让喜欢成为真实发生的事情。"],
+      ["你带给关系的礼物","你的积极性能够推动关系向前。你愿意发起沟通、解决问题，也常常是那个把“有空再说”变成具体计划的人。伴侣容易从你的行动里感受到被重视：你愿意腾出时间、记住重要日子、在关键时刻出现。你也可能很有感染力，让两个人的生活更有期待。面对困难，你倾向于不轻易放弃，而是寻找可以改善的办法。这种投入感能为关系提供动力，尤其当你的伴侣也愿意回应、共同建设时，你们很容易形成积极的互动循环。"],
+      ["容易卡住的地方","当投入没有得到相近回应时，你可能迅速感到失衡，开始追问、加码付出，或把对方的迟疑理解成不够在乎。你有时会希望问题立刻解决，但对方可能需要时间整理情绪；如果你在焦虑时连续发消息、反复确认，原本想靠近的动作反而可能让彼此更紧张。另一个风险是把“我愿意为你做很多”变成衡量爱的标准，忽略每个人表达爱的方式不同。也要留意不要为了维持热度而忽视自己的疲惫、工作与其他重要生活。"],
+      ["让爱更舒服的练习","在表达热情的同时，练习给回应留出时间。提出需求时尽量具体，例如“这周我们能不能安排一个只属于两个人的晚上”，而不是用“你根本不重视我”概括全部感受。对方回应较慢时，先照顾自己的情绪，再决定是否需要沟通；不要用测试、冷战或故意制造嫉妒来确认爱。也可以主动了解伴侣的表达方式：有人用行动，有人用语言，有人需要安静陪伴。最重要的是建立互相投入的标准——你值得被认真对待，也不必靠不断加码来换取确定感。把热烈和节奏感放在一起，你的爱会更有力量，也更可持续。"]
+    ]
+  },
+  D: {
+    name:"理性守护型", emoji:"🧭", subtitle:"你重视可靠、边界与长期经营，倾向用稳定行动建立信任。",
+    sections:[
+      ["你的恋爱底色","你看待爱情时，通常不只关注心动，也会留意两个人是否适合一起生活。你重视诚实、责任感、价值观和兑现承诺的能力。比起短暂的浪漫刺激，你更容易被稳定的行动打动：说到做到、遇事愿意商量、尊重彼此的边界。你可能不会时时把情绪挂在嘴边，但会通过解决问题、承担责任、安排实际事务来表达在乎。你希望关系有一定秩序感，知道彼此的期待，也愿意为共同目标做计划。对你而言，信任不是一句保证，而是许多次一致、可靠的行为累积起来的结果。"],
+      ["你带给关系的礼物","你能为关系提供稳定的底盘。遇到突发状况时，你往往愿意先厘清问题，再寻找可执行的办法；面对长期议题，你也比较愿意考虑现实条件，而不只凭一时情绪做决定。你通常尊重承诺，不轻易把分手或放弃挂在嘴边。伴侣可能会觉得你可靠、值得商量，重要时刻能一起扛事。你也有机会帮助两个人建立健康规则，例如如何分配时间、处理金钱、与家人相处或规划未来。稳定不是乏味，而是让双方知道，即使生活有变化，也有人愿意一起面对。"],
+      ["容易卡住的地方","你可能太快进入分析和解决模式，却忘了先回应情绪。伴侣说“我今天很难过”时，你也许马上给建议、列步骤，但对方当下想要的可能只是被理解。你有时会把脆弱视为失控，于是习惯压下失望、嫉妒或不安，等到累积过多才一次性表达。对关系的高标准也可能让你不自觉地评估、纠正对方，令亲密感变成一场绩效检查。另一个需要留意的地方是，过度追求确定性可能让你难以接受感情中不可避免的模糊和变化。"],
+      ["让爱更舒服的练习","尝试在分析前先做情绪回应。可以先说“听起来这件事让你很受挫”，再问“你想让我听你说，还是一起想办法？”这会让你的务实更有温度。也请练习用第一人称表达感受，例如“计划突然改变时我会有点不安”，而不是只指出对方哪里做得不够好。允许关系里存在一些不完美：不是每个问题都要立刻解决，也不是每次情绪起伏都代表关系出了故障。你可以继续重视边界和承诺，同时给柔软、玩心与偶尔的 spontaneity 留一点位置。真正可靠的亲密，不是控制所有变量，而是在变化发生时仍愿意坦诚沟通、共同调整。"]
+    ]
+  }
+};
+
+const questions = [
+ ["当你对一个人产生好感，最自然的反应是？",["先观察对方的情绪和细节，找机会自然靠近","保持自己的节奏，看看相处是否自在","主动制造互动，让对方感受到我的兴趣","先了解对方的价值观与生活方式"]],
+ ["理想中的周末约会更接近哪一种？",["在熟悉的小店聊天，慢慢分享彼此近况","一起探索新地方，之后各自也有自由时间","安排有仪式感的活动，留下特别回忆","一起做点实际的事，舒服踏实就好"]],
+ ["对方一整天没怎么回复消息，你通常会？",["担心是不是发生了什么，会留意对方状态","先忙自己的事，有空再自然联系","会主动问问情况，希望尽快知道原因","判断是否有合理原因，之后找机会沟通"]],
+ ["你最容易被哪种表达打动？",["对方记得我的小习惯，也愿意倾听","对方尊重我的选择，不干涉我的生活","对方明确表达喜欢，并用行动回应","对方说到做到，关键时刻靠得住"]],
+ ["发生意见不合时，你更可能？",["先理解彼此感受，尽量避免伤害","暂停一下，等双方冷静后再谈","希望当下说清楚，不想让问题拖着","梳理分歧和事实，找出可行方案"]],
+ ["恋爱中的联系频率，你更喜欢？",["有稳定问候，也愿意分享心情","自然就好，不必时时在线","频繁互动会让我感到被重视","规律、清楚，彼此都知道对方节奏"]],
+ ["当伴侣情绪低落时，你通常会？",["陪伴倾听，先让对方感到被理解","给对方空间，等他/她愿意再聊","主动安慰、安排活动，让对方开心起来","询问需要什么，再提供具体帮助"]],
+ ["你认为关系里最重要的基础是？",["情绪理解与彼此珍惜","独立自主与真实自在","热情回应与共同体验","信任、责任与稳定承诺"]],
+ ["如果伴侣想和你一起做一件新鲜的事，你会？",["先确认对方期待，也想让彼此都舒服","很乐意，只要不影响各自原有安排","马上期待起来，开始计划细节","评估时间和实际条件，再认真安排"]],
+ ["你更不能接受哪种相处状态？",["明明在一起，却长期感受不到理解","被过度干涉，失去个人空间","关系含糊、回应冷淡，缺乏热度","承诺反复变化，缺乏可靠感"]],
+ ["当你感到吃醋或不安时，你更可能？",["先观察自己的情绪，再温和表达","先自己消化，不想因此限制对方","想马上确认对方的态度和想法","寻找事实依据，再讨论双方边界"]],
+ ["对未来规划，你倾向于？",["希望了解彼此的情感期待，慢慢形成共识","保留弹性，不想太早被固定计划限制","有共同目标会让我更有动力","愿意认真讨论现实安排与长期方向"]],
+ ["伴侣忘记了一个对你重要的日子，你会？",["有些失落，但会先理解原因并表达感受","不太在意形式，更看重平时相处","会直接告诉对方，希望得到重视","看这是否是持续忽视承诺的一部分"]],
+ ["你表达爱意最常用的方式是？",["关心情绪、记住细节、温柔陪伴","分享体验，也支持对方做自己","主动表达、制造惊喜、投入时间","承担责任、解决问题、兑现承诺"]],
+ ["当关系进入平淡期，你更想？",["增加深入交流，重新发现彼此","一起尝试新活动，也保留个人生活","主动制造约会和浪漫，让热度回来","讨论生活节奏，建立新的共同目标"]],
+ ["伴侣提出一个你不太认同的需求，你会？",["先听懂背后的感受，再说自己的想法","坦诚说明边界，寻找彼此都自在的方式","表达真实态度，希望尽快达成共识","分析需求是否合理，再协商可执行做法"]],
+ ["你希望伴侣如何支持你的个人成长？",["关注我的感受，在我需要时陪伴","尊重我的选择，不替我做决定","为我加油，也愿意一起挑战新目标","提供稳定支持，和我讨论实际路径"]],
+ ["当你需要独处时，你通常会？",["担心对方误会，会先解释自己的状态","自然安排自己的时间，之后再联系","会说明原因，也希望对方给出回应","提前沟通安排，避免影响共同计划"]],
+ ["你如何看待恋爱中的小仪式感？",["小细节让我感到被惦记，很重要","有当然好，但不该成为压力","我喜欢主动创造值得纪念的时刻","不必复杂，稳定兑现更重要"]],
+ ["一段关系让你感到安心，通常是因为？",["我的情绪被认真对待","我能做自己，也能自在靠近","彼此明确选择对方，回应热烈","言行一致，遇到问题愿意共同承担"]]
+];
+
+const letters = ["A","B","C","D"];
+let current = 0;
+let answers = Array(questions.length).fill(null);
+const $ = id => document.getElementById(id);
+
+function showQuestion(){
+  const [q,opts] = questions[current];
+  $("questionCount").textContent = `第 ${current+1} / ${questions.length} 题`;
+  $("percent").textContent = `${Math.round((current+1)/questions.length*100)}%`;
+  $("progress").style.width = `${(current+1)/questions.length*100}%`;
+  $("qKicker").textContent = `QUESTION ${String(current+1).padStart(2,"0")}`;
+  $("questionText").textContent = q;
+  $("options").innerHTML = "";
+  opts.forEach((label,i)=>{
+    const btn=document.createElement("button");
+    btn.className="option"+(answers[current]===letters[i]?" selected":"");
+    btn.type="button";
+    btn.innerHTML=`<span class="letter">${letters[i]}</span><span>${label}</span>`;
+    btn.addEventListener("click",()=>{
+      answers[current]=letters[i];
+      [...$("options").children].forEach((el,j)=>el.classList.toggle("selected",j===i));
+      $("nextBtn").disabled=false;
+      $("nextBtn").textContent=current===questions.length-1?"查看我的结果 →":"下一题 →";
+    });
+    $("options").appendChild(btn);
+  });
+  $("prevBtn").disabled=current===0;
+  $("nextBtn").disabled=answers[current]===null;
+  $("nextBtn").textContent=current===questions.length-1?"查看我的结果 →":"下一题 →";
+}
+function start(){ $("intro").classList.add("hidden");$("result").classList.add("hidden");$("quiz").classList.remove("hidden");current=0;showQuestion(); }
+$("startBtn").addEventListener("click",start);
+$("prevBtn").addEventListener("click",()=>{if(current>0){current--;showQuestion();}});
+$("nextBtn").addEventListener("click",()=>{
+  if(!answers[current])return;
+  if(current<questions.length-1){current++;showQuestion();}
+  else renderResult();
+});
+function renderResult(){
+  const counts={A:0,B:0,C:0,D:0};
+  answers.forEach(a=>counts[a]++);
+  const max=Math.max(...Object.values(counts));
+  const tied=letters.filter(k=>counts[k]===max);
+  // 平票时按作答顺序中最后一次出现的高分类型决定，避免固定偏向某一类型。
+  let winner=tied.length===1?tied[0]:[...answers].reverse().find(a=>tied.includes(a));
+  const t=types[winner];
+  $("quiz").classList.add("hidden");$("result").classList.remove("hidden");
+  $("resultEmoji").textContent=t.emoji;
+  $("resultTitle").textContent=t.name;
+  $("resultSubtitle").textContent=t.subtitle;
+  $("scoreline").innerHTML=letters.map(k=>`<span class="scorepill">${types[k].name} ${counts[k]}题</span>`).join("");
+  $("analysis").innerHTML=t.sections.map(([heading,body])=>`<h3>${heading}</h3><p>${body}</p>`).join("");
+  window.scrollTo({top:0,behavior:"smooth"});
+  $("copyBtn").onclick=async()=>{
+    const summary=`我的爱情人格测试结果：${t.name}\n${t.subtitle}\n答题倾向：${letters.map(k=>types[k].name+" "+counts[k]+"题").join("、")}`;
+    try{await navigator.clipboard.writeText(summary);$("copyBtn").textContent="已复制 ✓";}
+    catch(e){$("copyBtn").textContent="复制不可用，请手动截图";}
+  };
+}
+$("restartBtn").addEventListener("click",()=>{answers=Array(questions.length).fill(null);$("result").classList.add("hidden");$("intro").classList.remove("hidden");window.scrollTo({top:0,behavior:"smooth"});});
+</script>
+</body>
+</html>
